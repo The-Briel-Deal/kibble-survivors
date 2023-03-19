@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://der76b6711ex3"]
+
+[ext_resource type="Script" path="res://sword_jab.gd" id="1_audyf"]
+[ext_resource type="Texture2D" uid="uid://d348mhsusfmjk" path="res://Assets/sword-jab.png" id="1_mtyrq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hrpl1"]
+radius = 4.0
+height = 18.0
+
+[node name="sword_jab" type="Area2D"]
+script = ExtResource("1_audyf")
+jab_speed_forward = 30.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_mtyrq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_hrpl1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

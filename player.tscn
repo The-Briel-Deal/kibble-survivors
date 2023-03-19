@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://dejqcsapsfpco"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_7g0bn"]
+[ext_resource type="Texture2D" uid="uid://lhc37fb3rxb7" path="res://Assets/player-walking.png" id="1_o3d7e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxl06"]
+atlas = ExtResource("1_o3d7e")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq5mw"]
+atlas = ExtResource("1_o3d7e")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2wc2"]
+atlas = ExtResource("1_o3d7e")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yo8dq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxl06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq5mw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2wc2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f1ca2"]
+radius = 5.0
+height = 16.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+motion_mode = 1
+script = ExtResource("1_7g0bn")
+speed = 50.0
+jab_time = 2.0
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2, 0)
+sprite_frames = SubResource("SpriteFrames_yo8dq")
+frame_progress = 0.371782
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(2, 0)
+polygon = PackedVector2Array(4, 7, 2, 5, 2, -2, 3, -2, 3, -8, -5, -8, -5, -2, -8, 1, -5, 3, -5, 5, -7, 7, -7, 8, 4, 8)
+disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_f1ca2")

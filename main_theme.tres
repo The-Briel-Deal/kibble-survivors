@@ -1,0 +1,30 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://d03w0xo2tw2kc"]
+
+[ext_resource type="FontFile" uid="uid://df0f68akw57xx" path="res://Assets/LDFComicSansBold.ttf" id="1_lo4x3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gr2xo"]
+bg_color = Color(0.298039, 0.32549, 0.34902, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nyw4"]
+bg_color = Color(0.211765, 0.223529, 0.25098, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.298039, 0.32549, 0.34902, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 20
+
+[resource]
+default_font = ExtResource("1_lo4x3")
+default_font_size = 21
+ProgressBar/colors/font_color = Color(0.764706, 0.862745, 0.898039, 1)
+ProgressBar/styles/background = SubResource("StyleBoxFlat_gr2xo")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_2nyw4")

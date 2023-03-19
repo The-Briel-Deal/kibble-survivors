@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhe4nu0xlcny6"]
+
+[ext_resource type="PackedScene" uid="uid://dejqcsapsfpco" path="res://player.tscn" id="1_bemtt"]
+[ext_resource type="Texture2D" uid="uid://dhik6j4iybatd" path="res://Assets/new-test-bg.png" id="1_d01u0"]
+[ext_resource type="Script" path="res://main.gd" id="1_ruolp"]
+[ext_resource type="PackedScene" uid="uid://wyudmv75a3lu" path="res://UI.tscn" id="4_2yj7i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gn7aw"]
+size = Vector2(20, 512)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ruolp")
+
+[node name="TestBg" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(11, 7)
+texture = ExtResource("1_d01u0")
+
+[node name="Player" parent="." instance=ExtResource("1_bemtt")]
+position = Vector2(62, 49)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, 3)
+zoom = Vector2(3, 3)
+
+[node name="UI" parent="Player/Camera2D" instance=ExtResource("4_2yj7i")]
+z_index = 50
+z_as_relative = false
+texture_filter = 1
+offset_left = -192.0
+offset_top = -108.0
+offset_right = 192.0
+offset_bottom = 108.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-255, 6)
+shape = SubResource("RectangleShape2D_gn7aw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(13, -259)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_gn7aw")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(279, 9)
+shape = SubResource("RectangleShape2D_gn7aw")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(13, 273)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_gn7aw")
