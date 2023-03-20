@@ -23,6 +23,9 @@ func _process(delta):
 		jab_time_elapsed -= jab_time
 		jab_sword(direction)
 	
+	if curr_health <=0:
+		die()
+	
 	youch_timeout -= delta
 
 func _physics_process(delta):
@@ -76,3 +79,5 @@ func take_damage(damage: int):
 		get_tree().get_root().add_child(youch_stream_player)
 		youch_stream_player.play()
 	
+func die():
+	get_tree().change_scene_to_file("res://main_menu.tscn")

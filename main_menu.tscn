@@ -1,11 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgjpp2j5cigfm"]
+[gd_scene load_steps=3 format=3 uid="uid://cgjpp2j5cigfm"]
 
+[ext_resource type="Script" path="res://main_menu.gd" id="1_7flyp"]
 [ext_resource type="Texture2D" uid="uid://tae1o5hlkp5t" path="res://Assets/kibble-logo.png" id="1_7o1u3"]
 
 [node name="main_menu" type="Node2D"]
+script = ExtResource("1_7flyp")
 
-[node name="Kibble-logo" type="Sprite2D" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 1.0
+offset_right = 1152.0
+offset_bottom = 649.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Kibble-logo" type="Sprite2D" parent="Control"]
 texture_filter = 1
-position = Vector2(580, 181)
+position = Vector2(574.5, 212)
 scale = Vector2(6.57031, 6.73438)
 texture = ExtResource("1_7o1u3")
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 459.0
+offset_right = 677.0
+offset_bottom = 532.0
+text = "Start"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_start_button_pressed"]
