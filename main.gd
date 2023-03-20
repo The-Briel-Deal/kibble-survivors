@@ -6,6 +6,7 @@ var timer: float
 var time_to_spawn: float = 1
 
 func _ready():
+	RenderingServer.set_default_clear_color(Color("222426"))
 	enemy = preload("res://enemy.tscn")
 
 
