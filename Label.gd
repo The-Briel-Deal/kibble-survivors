@@ -9,5 +9,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	time_passed += delta
-	text = "%s:%s:%s" % [int(round(time_passed))/60, int(round(time_passed)) % 60, int(round(time_passed*100)) % 100]
-	print(time_passed)
+	text = "%s:%s:%s" % [int(round(time_passed))/60, int(floor(time_passed)) % 60, int(floor(fmod(time_passed, 1.0)*100))]

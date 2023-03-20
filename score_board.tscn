@@ -1,14 +1,80 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3bd2varhb4bh"]
+[gd_scene load_steps=3 format=3 uid="uid://d3bd2varhb4bh"]
 
+[ext_resource type="Theme" uid="uid://d03w0xo2tw2kc" path="res://main_theme.tres" id="1_ppki6"]
 [ext_resource type="Script" path="res://score_board.gd" id="1_pvqjl"]
 
-[node name="score_board" type="Control"]
-layout_mode = 3
-anchor_bottom = 0.035
-offset_left = -2.0
-offset_top = 3.0
-offset_right = 162.0
-offset_bottom = 69.32
+[node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_pvqjl")
 
-[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.364
+anchor_top = 0.015
+anchor_right = 0.671
+anchor_bottom = 0.14
+offset_left = 118.672
+offset_top = 0.28
+offset_right = -118.992
+offset_bottom = -51.72
+grow_horizontal = 2
+theme = ExtResource("1_ppki6")
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 64
+text = "High Scores"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_left = 0.364
+anchor_top = 0.222
+anchor_right = 0.679
+anchor_bottom = 0.727
+offset_left = -0.328033
+offset_top = 0.143982
+offset_right = -0.208008
+offset_bottom = -0.0960388
+theme = ExtResource("1_ppki6")
+text = "Test
+Test
+Test
+Test
+Test
+Test
+Test
+test
+test
+est
+set
+se
+tse
+t
+set
+set
+set
+set
+set
+"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+anchors_preset = -1
+anchor_left = 0.363
+anchor_top = 0.813
+anchor_right = 0.679
+anchor_bottom = 0.869
+offset_left = 3.82401
+offset_top = 0.175964
+offset_right = -0.208008
+offset_bottom = -3.112
+placeholder_text = "Name"
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.365
+anchor_top = 0.765
+anchor_right = 0.673
+anchor_bottom = 0.81
+offset_left = -0.480011
+offset_top = 0.279968
+offset_right = -101.296
+offset_bottom = -5.88007
+theme = ExtResource("1_ppki6")
+text = "Submit your score of: "
