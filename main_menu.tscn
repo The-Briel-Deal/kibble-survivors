@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgjpp2j5cigfm"]
+
+[ext_resource type="Texture2D" uid="uid://tae1o5hlkp5t" path="res://Assets/kibble-logo.png" id="1_7o1u3"]
+
+[node name="main_menu" type="Node2D"]
+
+[node name="Kibble-logo" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(580, 181)
+scale = Vector2(6.57031, 6.73438)
+texture = ExtResource("1_7o1u3")

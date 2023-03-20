@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cly0lnxan3e34"]
+
+[ext_resource type="AudioStream" uid="uid://cnlfatll13pca" path="res://Assets/brute_force_loop.mp3" id="1_60fdn"]
+
+[node name="music" type="AudioStreamPlayer"]
+stream = ExtResource("1_60fdn")
+autoplay = true
