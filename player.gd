@@ -80,4 +80,4 @@ func take_damage(damage: int):
 		youch_stream_player.play()
 	
 func die():
-	get_tree().change_scene_to_file("res://main_menu.tscn")
+	get_tree().change_scene_to_file("res://score_board.tscn")
