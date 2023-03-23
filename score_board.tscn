@@ -33,26 +33,7 @@ offset_top = 0.143982
 offset_right = -0.208008
 offset_bottom = -0.0960388
 theme = ExtResource("1_ppki6")
-text = "Test
-Test
-Test
-Test
-Test
-Test
-Test
-test
-test
-est
-set
-se
-tse
-t
-set
-set
-set
-set
-set
-"
+text = "Loading..."
 
 [node name="TextEdit" type="TextEdit" parent="."]
 anchors_preset = -1
@@ -78,3 +59,7 @@ offset_right = -101.296
 offset_bottom = -5.88007
 theme = ExtResource("1_ppki6")
 text = "Submit your score of: "
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
